@@ -1,0 +1,27 @@
+{
+  "name": "periodic-table",
+  "version": "1.0.0",
+  "description": "Un programa que permite visualizar los elementos de la tabla periódica.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FelFT/Periodic-table.git"
+  },
+  "author": "FelFT",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/FelFT/Periodic-table/issues"
+  },
+  "homepage": "https://github.com/FelFT/Periodic-table#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "morgan": "^1.10.0",
+    "nodemon": "^2.0.14",
+    "pg": "^8.7.1",
+    "sequelize": "^6.7.0"
+  }
+}
