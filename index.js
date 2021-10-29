@@ -1,5 +1,6 @@
 const express = require('express');
 const morgan = require('morgan');
+const  enrutador  = require('./routes/routes');
 
 const app = express();
 
@@ -11,9 +12,7 @@ app.use(express.json({limit:'50mb'}));
 
 //routes
 //post get put delete
-app.get('/', (req, res)=>{
-    res.json({message:'Bienvenido a nuestro servidor'})
-})
+app.use('/api/table', enrutador);
 
 //static files
 

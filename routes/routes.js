@@ -1,5 +1,12 @@
 const express = require('express');
 
-const router = express.Router();
+const enrutador = express.Router();
 
-const elements = require('');
+const elements = require('../controllers/elements.js');
+
+enrutador
+    .route('/elements')
+    .get(elements.getElements)
+    .post(elements.createElements);
+
+module.exports = enrutador;
