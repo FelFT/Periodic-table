@@ -9,4 +9,8 @@ enrutador
     .get(elements.getElements)
     .post(elements.createElements);
 
+enrutador
+    .route('/elements/:id')
+    .put(elements.updateElements);
+
 module.exports = enrutador;
