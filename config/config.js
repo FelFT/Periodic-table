@@ -1,7 +1,7 @@
 module.exports={
     HOST:'localhost',
-    USER:'postgres',
+    USER:'periodic_user',
     PASSWORD: '1234',
-    DBNAME: 'periodic-table',
-    DIALECT: 'postgres'
+    DBNAME: 'periodicdb',
+    DIALECT: 'postgres' 
 }

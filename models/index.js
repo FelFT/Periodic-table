@@ -1,10 +1,20 @@
-const Secualize = require("sequalize");
-const { Sequelize } = require("sequelize/types");
+const Sequelize = require("sequelize");
 const DB = require("../config/config");
 
-const sequalize = new Sequelize(DB.DBNAME,DB.USER,DB.PASSWORD,{
+const sequelize = new Sequelize(DB.DBNAME,DB.USER,DB.PASSWORD,{
     host: DB.HOST,
     dialect: DB.DIALECT
 });
 
 const db = {};
+
+db.Sequelize = Sequelize;
+db.sequelize = sequelize;
+
+db.elemento = require('./elemento')(sequelize,Sequelize);
+db.estado = require('./estadoAgregacion')(sequelize,Sequelize);
+db.grupo = require('./grupo')(sequelize,Sequelize);
+db.periodo = require('./periodo')(sequelize,Sequelize);
+db.tipo = require('./tipo')(sequelize, Sequelize);
+
+module.exports = db;
