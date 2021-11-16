@@ -8,9 +8,9 @@ const app = express();
 db.sequelize.sync();
 
 //Para eliminar las tablas o vaciar y aplicar cambios
-/*db.sequelize.sync({force: true}).then(()=>{
-    console.log('Tablas restablecidas');
-});*/
+//db.sequelize.sync({force: true}).then(()=>{
+//    console.log('Tablas restablecidas');
+//});
 
 //midlewares - routes - stactic files - start server 
 
