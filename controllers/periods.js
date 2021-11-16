@@ -52,3 +52,22 @@ exports.updatePeriodos = async (req, res)=>{
         return res.status(500).send(message.error);
     }
 }
+
+exports.deletePeriodos=async(req,res)=>{
+    try {
+        const {id}=req.params;
+
+        const find = await periodo.findByPk(id);
+        
+        if (!find) return res.status(404).send({message: 'No se encontró periodo'});
+        if(find.statusDelete == true) return res.status(404).send({message:'No se encontró el periodo'});
+
+        find.statusDelete = true;
+        find.save();
+
+        return res.status(500).send({message:'Periodo eliminado correctamente'});
+    } catch (error) {
+        
+    }
+
+};

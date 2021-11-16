@@ -1,5 +1,5 @@
 module.exports = (sequelize,Sequelize)=>{
-    const Elemento = sequelize.define('tipo',{
+    const Elemento = sequelize.define('elemento',{
         nombre:{
             type: Sequelize.STRING,
             unique: true,

@@ -52,3 +52,22 @@ exports.updateGrupos = async (req, res)=>{
         return res.status(500).send(message.error);
     }
 }
+
+exports.deleteGrupos=async(req,res)=>{
+    try {
+        const {id}=req.params;
+
+        const find = await grupo.findByPk(id);
+        
+        if (!find) return res.status(404).send({message: 'No se encontró el grupo'});
+        if(find.statusDelete == true) return res.status(404).send({message:'No se encontró el grupo'});
+
+        find.statusDelete = true;
+        find.save();
+
+        return res.status(500).send({message:'Grupo eliminado correctamente'});
+    } catch (error) {
+        
+    }
+
+};

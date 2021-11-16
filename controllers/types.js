@@ -52,3 +52,22 @@ exports.updateTipos = async (req, res)=>{
         return res.status(500).send(message.error);
     }
 }
+
+exports.deleteTipos=async(req,res)=>{
+    try {
+        const {id}=req.params;
+
+        const find = await tipo.findByPk(id);
+        
+        if (!find) return res.status(404).send({message: 'No se encontró tipo'});
+        if(find.statusDelete == true) return res.status(404).send({message:'No se encontró el tipo'});
+
+        find.statusDelete = true;
+        find.save();
+
+        return res.status(500).send({message:'Tipo eliminado correctamente'});
+    } catch (error) {
+        
+    }
+
+};

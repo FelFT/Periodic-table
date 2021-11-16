@@ -22,7 +22,9 @@ exports.createEstados = async(req, res)=>{
 exports.getEstados = async (req, res) =>{
     try {
 
-        const find = await estado.findAll();
+        const find = await estado.findAll({
+            where:{statusDelete:false}
+        });
         return res.status(200).send(find);
 
     } catch (error) {
@@ -52,3 +54,22 @@ exports.updateEstados = async (req, res)=>{
         return res.status(500).send(message.error);
     }
 }
+
+exports.deleteEstados=async(req,res)=>{
+    try {
+        const {id}=req.params;
+
+        const find = await estado.findByPk(id);
+        
+        if (!find) return res.status(404).send({message: 'No se encontró estado'});
+        if(find.statusDelete == true) return res.status(404).send({message:'No se encontró el estado'});
+
+        find.statusDelete = true;
+        find.save();
+
+        return res.status(500).send({message:'Estado eliminado correctamente'});
+    } catch (error) {
+        
+    }
+
+};

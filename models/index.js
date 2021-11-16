@@ -11,10 +11,21 @@ const db = {};
 db.Sequelize = Sequelize;
 db.sequelize = sequelize;
 
-db.elemento = require('./elemento')(sequelize,Sequelize);
-db.estado = require('./estadoAgregacion')(sequelize,Sequelize);
-db.grupo = require('./grupo')(sequelize,Sequelize);
-db.periodo = require('./periodo')(sequelize,Sequelize);
-db.tipo = require('./tipo')(sequelize, Sequelize);
+db.elemento = require('./element')(sequelize,Sequelize);
+db.estado = require('./state')(sequelize,Sequelize);
+db.grupo = require('./group')(sequelize,Sequelize);
+db.periodo = require('./period')(sequelize,Sequelize);
+db.tipo = require('./type')(sequelize, Sequelize);
+
+db.estado.hasMany(db.elemento);
+db.grupo.hasMany(db.elemento);
+db.periodo.hasMany(db.elemento);
+db.tipo.hasMany(db.elemento);
+
+db.elemento.belongsTo(db.estado);
+db.elemento.belongsTo(db.grupo);
+db.elemento.belongsTo(db.periodo);
+db.elemento.belongsTo(db.tipo);
+
 
 module.exports = db;
