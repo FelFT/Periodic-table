@@ -13,7 +13,6 @@ db.sequelize.sync();
 //});
 
 //midlewares - routes - stactic files - start server 
-
 app.use(morgan('dev'));
 
 app.use(express.json({limit:'50mb'}));
@@ -23,6 +22,7 @@ app.use(express.json({limit:'50mb'}));
 app.use('/api/table', enrutador);
 
 //static files
+
 
 //start
 app.listen(3000, ()=>{

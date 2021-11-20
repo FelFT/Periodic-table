@@ -23,16 +23,16 @@ exports.createElements = async(req, res)=>{
         if(!body.tipoId) return res.status(404).send({message:'tipoId es requerido'});
 
         const findEstado = await estado.findOne({
-            whree: {id: body.estadoId, statusDelete: false},
+            where: {id: body.estadoId, statusDelete: false},
         });
         const findGrupo = await grupo.findOne({
-            whree: {id: body.grupoId, statusDelete: false},
+            where: {id: body.grupoId, statusDelete: false},
         });
         const findPeriodo = await periodo.findOne({
-            whree: {id: body.periodoId, statusDelete: false},
+            where: {id: body.periodoId, statusDelete: false},
         });
         const findTipo = await tipo.findOne({
-            whree: {id: body.tipoId, statusDelete: false},
+            where: {id: body.tipoId, statusDelete: false},
         });
 
         if(!findEstado) return res.status(404).send({message: 'Estado no encontrado'});
