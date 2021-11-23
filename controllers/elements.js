@@ -2,6 +2,8 @@ const db =  require('../models/index');
 const Sequelize = require('sequelize');
 const Op = Sequelize.Op;
 
+const fileUpload = require('../utils/uploadImages');
+
 const elemento = db.elemento;
 const estado = db.estado;
 const grupo = db.grupo;
@@ -35,6 +37,8 @@ exports.createElements = async(req, res)=>{
             where: {id: body.tipoId, statusDelete: false},
         });
 
+        let imagen = await fileUpload.fileUpload(body.imagen,'/imagen');
+
         if(!findEstado) return res.status(404).send({message: 'Estado no encontrado'});
         if(!findGrupo) return res.status(404).send({message: 'Grupo no encontrado'});
         if(!findPeriodo) return res.status(404).send({message: 'Periodo no encontrado'});
@@ -46,7 +50,7 @@ exports.createElements = async(req, res)=>{
             noAtomico: body.noAtomico,
             simbolo: body.simbolo,
             masa: body.masa,
-            imagen: body.imagen,
+            imagen: imagen,
             estadoId: body.estadoId,
             grupoId : body.grupoId,
             periodoId: body.periodoId,
