@@ -1,6 +1,6 @@
 module.exports={
     HOST:'localhost',
-    USER:'periodicdb',
+    USER:'periodic-user',
     PASSWORD: '1234',
     DBNAME: 'periodicdb',
     DIALECT: 'postgres' 
