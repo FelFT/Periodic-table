@@ -6,7 +6,7 @@ def menu():
     print ("Selecciona una opción")
     print ("\t1 - Consultar información de elemento")
     print ("\t2 - Consultar un grupo")
-    print ("\t9 - Salir")
+    print ("\tq - Salir")
     
 def mElement():
     os.system('cls')
@@ -25,4 +25,4 @@ def mElement():
     
 def mGroup():
     os.system('cls')
-    print("Ingrese ")
+

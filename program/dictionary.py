@@ -1,5 +1,5 @@
-def dictionary():
-    DicElementos = {
+def elements():
+    DicElements = {
         'H': ['Hidrogeno', 1.008, -259.1, -252.9, 'Gas', '1s^1', '+-1', 1, 1],
         'Li': ['Litio', 6.941, 180.5, 1342, 'Sólidoo', '[He]2s^1', '+1', 1, 3],
         'Na': ['Sodio', 22.99, 97.8, 883, 'Sólido', '[Ne]3s^1', '+1', 1, 11],
@@ -91,4 +91,27 @@ def dictionary():
         'Rn': ['Radon', 222, -71, -61.8, 'Gas', '[Xe]4f^14*5d^10*6s^2*6p^6', '0', 8, 86],
         'Og': ['Oganeson', 294, 'N/A', 'N/A', 'N/A', '[Rn]5f^14*6d^10*7s^2*7p^6', 'N/A', 'N/A', 118],
         }
-    return DicElementos
+    return DicElements
+
+def groups():
+     DicGroups = {
+        "1": ['H', 'Li', 'Na', 'K', 'Rb', 'Cs', 'Fr'],
+        "2": ['Be', 'Mg', 'Ca', 'Sr', 'Ba', 'Ra'],
+        "3": ['Sc', 'Y', 'Lu', 'Lr'],
+        "4": ['Ti', 'Zr', 'Hf', 'Rf'],
+        "5": ['V', 'Nb', 'Ta', 'Db'],
+        "6": ['Cr', 'Mo', 'W', 'Sg'],
+        "7": ['Mn', 'Tc', 'Re', 'Bh'],
+        "8": ['Fe', 'Ru', 'Os', 'Hs'],
+        "9": ['Co', 'Rh', 'Ir', 'Mt'],
+        "10": ['Ni', 'Pd', 'Pt', 'Ds'],
+        "11": ['Cu', 'Ag', 'Au', 'Rg'],
+        "12": ['Zn', 'Cd', 'Hg', 'Cn'],
+        "13": ['B', 'Al', 'Ga', 'In', 'Tl', 'Nh'],
+        "14": ['C', 'Si', 'Ge', 'Sn', 'Pb', 'Fl'],
+        "15": ['N', 'P', 'As', 'Sb', 'Bi', 'Mc'],
+        "16": ['O', 'S', 'Se', 'Te', 'Po', 'Lv'],
+        "17": ['F', 'Cl', 'Br', 'I', 'At', 'Ts'],
+        "18": ['He', 'Ne', 'Ar', 'Kr', 'Xe', 'Rn', 'Og']
+        }
+     return DicGroups
